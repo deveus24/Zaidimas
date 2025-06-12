@@ -1,5 +1,9 @@
 package player;
 
+import score.ScoreEntry;
+import score.ScoreBoard;
+import java.util.Scanner;
+
 import java.io.IOException;
 import java.util.Scanner;
 import map.MapGenerator;
@@ -50,8 +54,7 @@ public class MainMenu
                     break;
 
                 case "4":
-                    // TODO: show top 100 players and export to html
-                    System.out.println("Top 100 players");
+                    ScoreBoard.printTopScores();
                     break;
 
                 case "0":

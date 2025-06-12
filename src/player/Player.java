@@ -1,5 +1,8 @@
 package player;
 
+import inventory.Inventory;
+import loot.LootItem;
+
 public class Player
 {
     private int hp;
@@ -8,6 +11,7 @@ public class Player
     private int defense;
     private int level;
     private int xp;
+    private Inventory inventory;
 
     public Player(int hp, int maxHp, int attack, int defense, int level, int xp)
     {
@@ -17,6 +21,7 @@ public class Player
         this.defense = defense;
         this.level = level;
         this.xp = xp;
+        this.inventory = new Inventory();
     }
 
     public void takeDamage(int damage)
@@ -74,6 +79,24 @@ public class Player
         attack += 2;
         defense += 1;
         System.out.println("Level up! Current level: " + level);
+
+        checkAchievements();
+    }
+
+    private void checkAchievements() {
+        switch (level) {
+            case 5:
+                System.out.println("🏆 Achievement unlocked: Reached level 5!");
+                break;
+            case 10:
+                System.out.println("🏆 Achievement unlocked: Reached level 10!");
+                break;
+            case 20:
+                System.out.println("🏆 Achievement unlocked: Reached level 20!");
+                break;
+            default:
+                break;
+        }
     }
 
     public int getHp()
@@ -89,6 +112,11 @@ public class Player
     public int getMaxHp()
     {
         return maxHp;
+    }
+
+    public Inventory getInventory()
+    {
+        return inventory;
     }
 
     public void setMaxHp(int maxHp)

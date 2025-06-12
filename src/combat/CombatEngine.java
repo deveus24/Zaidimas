@@ -1,6 +1,8 @@
 package combat;
 
 import player.Player;
+import loot.LootItem;
+import inventory.Inventory;
 
 public class CombatEngine
 {
@@ -21,7 +23,6 @@ public class CombatEngine
             player.takeDamage(damage);
 
             System.out.println("Player has taken " + damage + " damage");
-
         }
 
         if(!player.isDead())
@@ -29,6 +30,12 @@ public class CombatEngine
             System.out.println("Enemy has been defeated");
             System.out.println("You have received " + enemy.getXpReward() + " XP");
             player.gainXp(enemy.getXpReward());
+
+
+            LootItem loot = new LootItem("Sword", "Weapon", 15);
+            player.getInventory().addItem(loot);
+            System.out.println("You received loot: ");
+            loot.printInfo();
         }
         else
         {

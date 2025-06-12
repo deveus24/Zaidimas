@@ -18,7 +18,6 @@ public class CombatEngineTest {
         player.printStatus();
         player.getInventory().printInventory();
 
-        // Čia įrašom rezultatą į ScoreBoard
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter your name to save your score: ");
         String playerName = scanner.nextLine();

@@ -164,20 +164,4 @@ public class Player
         this.xp = xp;
     }
 
-    /*
-    @Override
-    public String toString()
-    {
-        return "Player{" +
-                "hp=" + hp +
-                ", maxHp=" + maxHp +
-                ", attack=" + attack +
-                ", defense=" + defense +
-                ", level=" + level +
-                ", xp=" + xp +
-                '}';
-    }
-     */
-
-
 }
